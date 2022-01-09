@@ -3,6 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const bodyParser = require('body-parser')
 const viewsRouter = require('./routers/views')
+const apiRouter = require('./routers/api')
 const cookieParser = require('cookie-parser')
 const https = require('https')
 const fs = require('fs')
@@ -54,9 +55,6 @@ app.use(express.static(publicDirectoryPath))
 
 // Middleware function to setup CORS and Force HTTPS, * Has to be placed before assigning any routers else won't work
 app.use(function (req, res, next) {
-    // Forcing HTTPS, * This forces all the connection to go through HTTPS as a hard forcing 
-    // if (!req.secure)
-    //   return res.redirect(301,"https://" + req.headers.host + req.url);
     // Setup CORS Functionality
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -65,6 +63,8 @@ app.use(function (req, res, next) {
 
 // Assigning the 'Views' Router
 app.use(viewsRouter)
+// Assigning the 'API' Router
+app.use(apiRouter)
 
 // For any of the un-handled routes
 app.get('*', (req, res) => {
