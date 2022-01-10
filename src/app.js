@@ -9,7 +9,7 @@ const https = require('https')
 const fs = require('fs')
 // const helmet = require('helmet')
 // const morgan = require('morgan')
-// require('./db/mongoose')
+require('./db/mongoose')
 
 const app = express()
 
