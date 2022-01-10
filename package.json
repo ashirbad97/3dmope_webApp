@@ -1,16 +1,31 @@
 {
-    "dependencies": {
-        "body-parser": "^1.19.0",
-        "cookie": "^0.4.1",
-        "cookie-parser": "^1.4.5",
-        "express": "^4.17.1",
-        "generate-password": "^1.6.1",
-        "hbs": "^4.1.2",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.13.7",
-        "parser": "^0.1.4",
-        "path": "^0.12.7",
-        "sqlite3": "^5.0.2",
-        "validator": "^13.6.0"
-    }
+  "name": "3dmope_webapp",
+  "version": "0.0.1",
+  "description": "crisis",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashirbad97/3dmope_webApp.git"
+  },
+  "keywords": [
+    "crisis",
+    "not-recommended_toDeploy"
+  ],
+  "author": "Ashirbad Samantaray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashirbad97/3dmope_webApp/issues"
+  },
+  "homepage": "https://github.com/ashirbad97/3dmope_webApp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.5",
+    "path": "^0.12.7"
+  }
 }
