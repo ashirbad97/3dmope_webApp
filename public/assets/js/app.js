@@ -37,7 +37,11 @@ if (document.getElementById('adminHome') != null) {
                 $('#onboardModal').modal('toggle') // Form Modal
                 $('#onboardModalSuccess').modal('toggle') // Success Modal
 
+            } else {
+                $('#onboardModalFailure').modal('toggle') //Failure Modal
             }
-        }).catch(error => console.error(error));
+        }).catch(async(error) => {
+            $('#onboardModalFailure').modal('toggle') //Failure Modal
+            console.error(error)});
     })
 }
