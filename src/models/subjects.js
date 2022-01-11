@@ -32,14 +32,15 @@ subjectSchema.statics.createNewUser = async (uid) => {
 
 }
 
-subjectSchema.statics.findUser = async (subjectId) => {
+subjectSchema.statics.findUser = async (uid) => {
     try {
-        ifUser = await Subjects.findOne({ subjectId })
+        ifUser = await Subjects.find({ subjectId: String(uid) })
+        console.log(ifUser)
         if (ifUser) {
-            console.log("Found User ", subjectId)
+            console.log("Found User ", uid)
             return true
         } else {
-            console.log("Subject Not Found ", subjectId)
+            console.log("Subject Not Found ", uid)
             return false
         }
     } catch (error) {

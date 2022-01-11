@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser')
 const https = require('https')
 const fs = require('fs')
 // const helmet = require('helmet')
-// const morgan = require('morgan')
+const morgan = require('morgan')
 require('./db/mongoose')
 
 const app = express()
@@ -51,7 +51,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(express.static(publicDirectoryPath))
 // app.use(helmet())
-// app.use(morgan('combined'))
+app.use(morgan('combined'))
 
 // Middleware function to setup CORS and Force HTTPS, * Has to be placed before assigning any routers else won't work
 app.use(function (req, res, next) {
