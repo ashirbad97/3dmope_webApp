@@ -35,7 +35,7 @@ subjectSchema.statics.createNewUser = async (uid) => {
 subjectSchema.statics.findUser = async (uid) => {
     try {
         // Big ambiguity, due to some error the find function working with Postman API calls but not with Unity
-        // so have to manually fetch all the users and check among them
+        // so have to manually fetch all the users and check among them, fix this bug later
         ifUser = await Subjects.find()
         console.log(ifUser.subjectId)
         if (ifUser) {
