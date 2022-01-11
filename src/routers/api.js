@@ -9,7 +9,6 @@ const Subjects = require('../models/subjects')
 // End of functions and start of routers
 apirouter.post('/api/createUser', async (req, res) => {
     try {
-        console.log(req.body)
         saveStatus = await Subjects.createNewUser(req.body.uid)
         console.log(saveStatus)
         if (saveStatus)
