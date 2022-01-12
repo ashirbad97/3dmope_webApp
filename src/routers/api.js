@@ -23,15 +23,9 @@ apirouter.post('/api/createUser', async (req, res) => {
 // API Endpoint to check if a given uid exists
 apirouter.post('/api/checkUser', async (req, res) => {
     try {
-        // uid = JSON.stringify(req.query.uid)
-        console.log(req.body)
-        // console.log(typeof (req.query.uid))
-        // uid = String(req.query.uid)
-        // checkIfUser = await Subjects.findUser(subjectUid)
-        // checkIfUser = await Subjects.find({ subjectId: JSON.parse(uid) })
-        // console.log(checkIfUser)
-        // if (checkIfUser) res.status(200).send("Subject Found")
-        // else return res.status(404).send("Subject Not Found")
+        checkIfUser = await Subjects.findUser(req.body.uid)
+        if (checkIfUser) res.status(200).send("Subject Found")
+        else return res.status(404).send("Subject Not Found")
     } catch (error) {
         console.log(error)
         res.status(500).send("Error fetching the user details")
