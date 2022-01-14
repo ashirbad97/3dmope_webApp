@@ -1,4 +1,6 @@
+const async = require('hbs/lib/async')
 const mongoose = require('mongoose')
+const Sessions = require('../models/sessions')
 
 const subjectSchema = new mongoose.Schema({
     subjectId: {
@@ -11,6 +13,13 @@ const subjectSchema = new mongoose.Schema({
         type: String,
         trim: true
     }
+})
+// Schema Virtuals
+subjectSchema.virtual('noOfsessions', {
+    ref: 'Sessions',
+    localField: '_id',
+    foreignField: 'subjectId',
+    count: true
 })
 // Schema Statics
 subjectSchema.statics.allSubjectList = async () => {
@@ -34,11 +43,11 @@ subjectSchema.statics.createNewUser = async (uid) => {
 
 subjectSchema.statics.findUser = async (subjectId) => {
     try {
-        ifUser = await Subjects.findOne({ subjectId })
-        console.log(ifUser)
+        ifUser = await Subjects.findOne({ subjectId }).populate("noOfsessions")
+        // console.log(ifUser)
         if (ifUser) {
             console.log("Found User ", subjectId)
-            return true
+            return ifUser
         } else {
             console.log("Subject Not Found ", subjectId)
             return false
@@ -48,5 +57,22 @@ subjectSchema.statics.findUser = async (subjectId) => {
         return false
     }
 }
+// Schema Methods
+
+subjectSchema.methods.createNewSession = async function () {
+    subject = this
+    totalSessions = await Sessions.find().count()
+    console.log("Total No of sessions in server are : " + totalSessions)
+    console.log("Creating a new Session ")
+    session = await Sessions({
+        sessionId: totalSessions + 1,
+        timestamp: Date.now(),
+        subjectId: this._id
+    })
+    newSession = await session.save()
+    return newSession
+}
+
+
 const Subjects = mongoose.model('Subjects', subjectSchema)
 module.exports = Subjects
