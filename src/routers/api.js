@@ -4,6 +4,7 @@ const apirouter = new express.Router()
 const path = require('path')
 const fs = require("fs")
 const formidable = require("formidable")
+const lib = require("../lib")
 // const multer = require("multer")
 // Importing Models
 const Subjects = require('../models/subjects')
@@ -44,7 +45,6 @@ apirouter.post('/api/checkUser', async (req, res) => {
 // API Endpoint to handle uploaded trial files
 apirouter.post('/api/fileUploadHandler', async (req, res) => {
     try {
-        console.log()
         const form = new formidable.IncomingForm()
         form.multilples = true
         form.uploadDir = tempUploadFolder
@@ -55,8 +55,7 @@ apirouter.post('/api/fileUploadHandler', async (req, res) => {
             }
         })
         form.on('file', async (field, file) => {
-            // console.log(file.filepath)
-            fs.renameSync(file.filepath, path.join(trialUploadFolder, file.originalFilename))
+            lib.handlerUploadFiles(file.originalFilename, file.filepath)
         })
     } catch (error) {
         console.log(error)
