@@ -55,9 +55,8 @@ apirouter.post('/api/fileUploadHandler', async (req, res) => {
             }
         })
         form.on('file', async (field, file) => {
-            console.log(file.filepath)
+            // console.log(file.filepath)
             fs.renameSync(file.filepath, path.join(trialUploadFolder, file.originalFilename))
-            console.log("Successfull")
         })
     } catch (error) {
         console.log(error)
