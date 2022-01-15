@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>
-        3dMoper Dashboard
+        Individual Session List
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -31,15 +31,13 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    {{!-- Google JQuery --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
-<body id="adminHome" class="g-sidenav-show  bg-gray-200">
+<body class="g-sidenav-show  bg-gray-200">
     <aside
         class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
         id="sidenav-main">
@@ -49,7 +47,7 @@
             <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
                 target="_blank">
                 <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-                <span class="ms-1 font-weight-bold text-white">3dMoper Dashboard</span>
+                <span class="ms-1 font-weight-bold text-white">Individual Session List</span>
             </a>
         </div>
         <hr class="horizontal light mt-0 mb-2">
@@ -63,101 +61,81 @@
                         <span class="nav-link-text ms-1">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white " href="../pages/notifications.html">
-                        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i class="material-icons opacity-10">notifications</i>
-                        </div>
-                        <span class="nav-link-text ms-1">Notifications</span>
-                    </a>
-                </li>
-                <li class="nav-item mt-3">
-                    <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Actions</h6>
-                </li>
-                <li class="nav-item">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <!-- Button trigger modal -->
-                    </div>
-                </li>
             </ul>
         </div>
     </aside>
     <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-        {{!-- Nav Bar was here --}}
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
                     <div class="card my-4">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                                <h6 class="text-white text-capitalize ps-3">Subjects List</h6>
+                                <h6 class="text-white text-capitalize ps-3">Session List</h6>
                             </div>
                         </div>
                         <div class="card-body px-0 pb-2">
                             <div class="table-responsive p-0">
-                                <table class="table align-items-center justify-content-center mb-0">
+                                <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Session ID</th>
+                                                Subject ID</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Timestamp</th>
+                                                TimeStamp</th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Status</th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                View</th>
+                                            <th class="text-secondary opacity-7"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each subjectSessions}}
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="../assets/img/team-2.jpg"
+                                                            class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm">{{this.sessionId}}</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-xs font-weight-bold mb-0">{{this.timestamp}}</p>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="badge badge-sm bg-gradient-success">Online</span>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="badge badge-sm bg-gradient-success">View Output</span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
+                                                    data-toggle="tooltip" data-original-title="Edit user">
 
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {{/each}}
+                                    </tbody>
+                                </table>
                             </div>
-                            {{!-- {{>modals}} --}}
-                            {{>adminFooterJS}}
                         </div>
-    </main>
-    {{>adminHomeJS}}
-</body>
-
-</html> View</th>
-</tr>
-</tr>
-</thead>
-<tbody>
-    {{#each subjectSessions}}
-    <tr>
-        <td>
-            <div class="d-flex px-2 py-1">
-                <div>
-                    <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user5">
-                </div>
-                <div class="d-flex flex-column justify-content-center">
-                    <h6 class="mb-0 text-sm">{{this.sessionId}}</h6>
+                    </div>
                 </div>
             </div>
-        </td>
-        <td>
-            <p class="text-xs font-weight-bold mb-0">{{this.timestamp}}</p>
-        </td>
-        <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm bg-gradient-secondary">Offline</span>
-        </td>
-        <td class="align-middle text-center text-sm">
-            <span class="badge badge-sm bg-gradient-secondary">View</span>
-        </td>
-    </tr>
-    {{/each}}
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-{{!-- {{>modals}} --}}
-{{>adminFooterJS}}
-</div>
-</main>
-{{>adminHomeJS}}
+            {{>adminFooterJS}}
+        </div>
+    </main>
+    {{>adminHomeJS}}
 </body>
 
 </html>
