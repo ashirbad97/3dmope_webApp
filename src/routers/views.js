@@ -12,14 +12,21 @@ const Subjects = require('../models/subjects')
 router.get('/', async (req, res) => {
     try {
         allSubjects = await Subjects.allSubjectList()
-        res.render('adminHome',{allSubjects})
+        res.render('adminHome', { allSubjects })
     } catch (error) {
         console.log(error)
     }
 })
 // GET Individual Subject Page
-router.get('/subjectSessions?:uid',async(req,res)=>{
-    console.log(req.query.uid)
+router.get('/subjectSessions?:uid', async (req, res) => {
+    try {
+        // console.log(req.query.uid)
+        subjectSessions = await Subjects.allSessionList(req.query.uid)
+        // console.log(subjectSessions)
+        res.render('subjectSessionList', { subjectSessions })
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 module.exports = router
