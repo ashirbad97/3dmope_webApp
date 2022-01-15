@@ -21,6 +21,11 @@ subjectSchema.virtual('noOfsessions', {
     foreignField: 'subjectId',
     count: true
 })
+subjectSchema.virtual('sessions', {
+    ref: 'Sessions',
+    localField: '_id',
+    foreignField: 'subjectId',
+})
 // Schema Statics
 subjectSchema.statics.allSubjectList = async () => {
     subjectList = await Subjects.find().select('subjectId')
@@ -57,6 +62,16 @@ subjectSchema.statics.findUser = async (subjectId) => {
         return false
     }
 }
+
+subjectSchema.statics.allSessionList = async (subjectId) => {
+    try {
+        listSessions = await Subjects.findOne({ subjectId }).populate("sessions")
+        return listSessions.sessions
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 // Schema Methods
 
 subjectSchema.methods.createNewSession = async function () {
