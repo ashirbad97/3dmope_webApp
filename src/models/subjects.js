@@ -4,7 +4,7 @@ const Sessions = require('../models/sessions')
 const fs = require("fs")
 const path = require('path')
 const lib = require("../lib")
-const trialUploadFolder = path.join(__dirname, '../../trialOutput/')
+
 const subjectSchema = new mongoose.Schema({
     subjectId: {
         type: String,
