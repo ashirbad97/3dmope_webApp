@@ -1,10 +1,11 @@
-# importing csv module
-from asyncio import FastChildWatcher
+import asyncio
 import csv
+from importlib.metadata import requires
 import os
 import json
 import sqlite3
 import argparse
+
 
 # Define the current file path
 currentPath = os.getcwd()
@@ -45,7 +46,10 @@ def storedb(sessionId, cordId, coordinates):
         print("Established connection with database")
         # Define the SQL Query for seeding of Path Coordinates
         # conn.execute("INSERT INTO coordinates (cordId,coordinates) VALUES (?,?)",(cordId,coordinates))
-
+        print("Inside db ")
+        print("Initial Coordinate value is ", coordinates.frameTime)
+        # print(json.dumps(coordinates.frameTime))
+        print("````````````````````````````````````````````````````````````")
         # Define the SQL Query for seeding of Result Coordinates
         conn.execute(
             "INSERT INTO subTrialData\
@@ -81,6 +85,9 @@ def storedb(sessionId, cordId, coordinates):
             + " and subtrialId "
             + cordId
         )
+        if coordinates:
+            print("Deleting Coordinates")
+        del coordinates
         return True
     finally:
         conn.close()
@@ -95,12 +102,46 @@ def findFolder(sessionId, userId):
     return os.path.abspath(targetFolder)
 
 
+def dumpToFile(sessionId, subtrial, coordinates):
+    try:
+        fileExtension = ".json"
+        fileName = subtrial + fileExtension
+        dumpFolderName = os.path.abspath(os.path.join("../../temp", str(sessionId)))
+        print("Checking for dir name : ", dumpFolderName)
+        check_dir = os.path.isdir(dumpFolderName)
+        print("Check dir found to be ", check_dir)
+        if not check_dir:
+            print("Dir not found creating new one")
+            os.makedirs(dumpFolderName)
+        dumpFileName = os.path.join(dumpFolderName, fileName)
+        print("Checking for file name : ", dumpFileName)
+        check_file = os.path.exists(dumpFileName)
+        print("Check file found to be ", check_file)
+        if not check_file:
+            print("File not found creating new one")
+            with open(dumpFileName, "w") as fp:
+                pass
+        out_file = open(dumpFileName, "w")
+        json.dump(json.dumps(coordinates.frameTime), out_file)
+        json.dump(json.dumps(coordinates.eyePos3Dx), out_file)
+        json.dump(json.dumps(coordinates.eyePos3Dy), out_file)
+        json.dump(json.dumps(coordinates.eyePos3Dz), out_file)
+        json.dump(json.dumps(coordinates.leftGazeDirX), out_file)
+        json.dump(json.dumps(coordinates.leftGazeDirY), out_file)
+        json.dump(json.dumps(coordinates.leftGazeDirZ), out_file)
+        json.dump(json.dumps(coordinates.rightGazeDirX), out_file)
+        json.dump(json.dumps(coordinates.rightGazeDirY), out_file)
+        json.dump(json.dumps(coordinates.rightGazeDirZ), out_file)
+        out_file.close()
+    except Exception as e:
+        print("Exception is ", e)
+
+
 def getCoordinates(filename):
     try:
         coordinates = parsecsvfilesResults(filename)
         # print(coordinates)
         # print(len(coordinates))
-
         for i in range(1, len(coordinates)):
             # print(coordinates[i][eyePos3DxIndex])
             result.frameTime.append(coordinates[i][result.frameTimeIndex])
@@ -161,31 +202,39 @@ result.eyePos3Dz = []
 
 
 def main():
-    # Creating the parser
-    parser = argparse.ArgumentParser(
-        description="Parsing the subjects trial output csv files and seeding into sqlite3 db"
-    )
+    try:
+        # Creating the parser
+        parser = argparse.ArgumentParser(
+            description="Parsing the subjects trial output csv files and seeding into sqlite3 db"
+        )
 
-    # Adding arguments into the parser
-    parser.add_argument("-sessionId", type=int, required=True)
-    parser.add_argument("-userId", type=str, required=True)
+        # Adding arguments into the parser
+        parser.add_argument("-sessionId", type=int, required=True)
+        parser.add_argument("-userId", type=str, required=True)
+        parser.add_argument("-subtrialId", type=str, required=True)
 
-    # Parse the arguments
-    args = parser.parse_args()
-    targetFolder = findFolder(args.sessionId, args.userId)
-    trialFileList = os.listdir(targetFolder)
-    for file in trialFileList:
-        subtrialId = file[14:15]
-        subtrialId = "str" + subtrialId
-        if subtrialId == "str7":
-            print("Not sending 7th file")
-            break
-        else:
-            print(f"File Name is ", file)
-            print(f"File path is ", os.path.join(targetFolder, file))
-            print(f"Sub-trial id is ", subtrialId)
-            stimulus_coordinates = getCoordinates(os.path.join(targetFolder, file))
-            storedb(args.sessionId, subtrialId, stimulus_coordinates)
+        # Parse the arguments
+        args = parser.parse_args()
+        targetFolder = findFolder(args.sessionId, args.userId)
+        targetFile = (
+            str(args.userId)
+            + "_"
+            + str(args.sessionId)
+            + "_"
+            + str(args.subtrialId)
+            + ".csv"
+        )
+        targetFilePath = os.path.abspath(os.path.join(targetFolder, targetFile))
+        print(f"File Name is ", targetFilePath)
+        stimulus_coordinates = getCoordinates(targetFilePath)
+        # dumpToFile(args.sessionId, subtrialId, stimulus_coordinates)
+        dbOperation = storedb(args.sessionId, args.subtrialId, stimulus_coordinates)
+        print(dbOperation)
+    except Exception as e:
+        print("Exception is ", e)
+        return False
+    else:
+        return True
 
 
 if __name__ == "__main__":
