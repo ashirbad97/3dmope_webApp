@@ -1,7 +1,9 @@
 const path = require('path')
 const fs = require("fs")
+const async = require('hbs/lib/async')
 const trialUploadFolder = path.join(__dirname, '../trialOutput')
 const tempUploadFolder = path.join(__dirname, '../tempUpload/')
+const sessionImgFolder = path.join(__dirname, '../imgOutput/')
 seperator = "/"
 // Function definition
 createNewFolder = async (subjectId, newSessionCount) => {
@@ -26,4 +28,27 @@ handlerUploadFiles = async (uploadFileName, tempFileName) => {
         console.log(error)
     }
 }
-module.exports = { createNewFolder, handlerUploadFiles }
+checkIfSessionImgFolderExist = async (sessionId) => {
+    try {
+        targetSessionFolder = path.join(sessionImgFolder, sessionId.toString())
+        if (fs.existsSync(targetSessionFolder)) {
+            // console.log("Folder Exist")
+            // Find the list of all output img files
+            sessionOutputFileList = fs.readdirSync(targetSessionFolder)
+            // Check if folder is not empty
+            if (sessionOutputFileList.length != 0) {
+                return true
+            } else {
+                // console.log("Session Output Img Folder is empty")
+                return false
+            }
+        } else {
+            // console.log("Folder does not exist")
+            return false
+        }
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist }
