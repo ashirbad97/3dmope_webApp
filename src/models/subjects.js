@@ -68,7 +68,7 @@ subjectSchema.statics.findUser = async (subjectId) => {
 
 subjectSchema.statics.allSessionList = async (subjectId) => {
     try {
-        listSessions = await Subjects.findOne({ subjectId }).populate("sessions")
+        listSessions = await Subjects.findOne({ subjectId }).populate("sessions").lean()
         return listSessions.sessions
     } catch (error) {
         console.log(error)
