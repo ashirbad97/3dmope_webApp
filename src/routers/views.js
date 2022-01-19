@@ -28,5 +28,14 @@ router.get('/subjectSessions?:uid', async (req, res) => {
         console.log(error)
     }
 })
+// Make Call to seed the db
+router.get('/parseAndPopulate?:sessionId?:uid', async (req, res) => {
+    try {
+        sessionId = req.query.sessionId
+        uid = req.query.uid
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 module.exports = router
