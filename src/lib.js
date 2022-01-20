@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require("fs")
 const async = require('hbs/lib/async')
+const admz = require('adm-zip')
 const trialUploadFolder = path.join(__dirname, '../trialOutput')
 const tempUploadFolder = path.join(__dirname, '../tempUpload/')
 const sessionImgFolder = path.join(__dirname, '../imgOutput/')
@@ -51,4 +52,24 @@ checkIfSessionImgFolderExist = async (sessionId) => {
         return false
     }
 }
-module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist }
+convertToZip = async (sessionId) => {
+    try {
+        targetSessionFolder = path.join(sessionImgFolder, sessionId.toString())
+        // console.log(targetSessionFolder)
+        if (fs.existsSync(targetSessionFolder)) {
+            sessionOutputFileList = fs.readdirSync(targetSessionFolder)
+            zp = new admz()
+            sessionOutputFileList.forEach(file => {
+                // console.log(path.join(targetSessionFolder, "/", file))
+                zp.addLocalFile(path.join(targetSessionFolder, "/", file))
+            });
+            const zippedData = zp.toBuffer()
+            return zippedData
+        }
+        return false
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip }

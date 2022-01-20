@@ -45,6 +45,7 @@ apirouter.post('/api/checkUser', async (req, res) => {
 // API Endpoint to handle uploaded trial files
 apirouter.post('/api/fileUploadHandler', async (req, res) => {
     try {
+        console.log("Got upload request")
         const form = new formidable.IncomingForm()
         form.multilples = true
         form.uploadDir = tempUploadFolder

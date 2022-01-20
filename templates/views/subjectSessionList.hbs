@@ -111,13 +111,24 @@
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">{{this.timestamp}}</p>
                                             </td>
+                                            {{#if this.sessionStatus}}
                                             <td class="align-middle text-center text-sm">
                                                 <span
                                                     class="badge badge-sm bg-gradient-success">{{this.sessionStatus}}</span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">View Output</span>
+                                                <span class="badge badge-sm bg-gradient-success">Output</span>
                                             </td>
+                                            {{else}}
+                                            <td class="align-middle text-center text-sm">
+                                                <span
+                                                    class="badge badge-sm bg-gradient-danger">{{this.sessionStatus}}</span>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <span class="badge badge-sm bg-gradient-warning">Process</span>
+                                            </td>
+                                            {{/if}}
+
                                             <td class="align-middle">
                                                 <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
                                                     data-toggle="tooltip" data-original-title="Edit user">

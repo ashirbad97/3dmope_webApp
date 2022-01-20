@@ -1,11 +1,12 @@
 const express = require('express')
 const router = new express.Router()
 const path = require('path')
-
+const lib = require("../lib")
 // Importing Models
 const Subjects = require('../models/subjects')
 const Sessions = require('../models/sessions')
 const async = require('hbs/lib/async')
+const req = require('express/lib/request')
 // Functions Start, remove to another file later
 
 // End of functions and start of routers
@@ -40,5 +41,17 @@ router.get('/parseAndPopulate?:sessionId', async (req, res) => {
         console.log(error)
     }
 })
-
+router.get('/downloadOutputImg?:sessionId', async (req, res) => {
+    try {
+        sessionId = req.query.sessionId
+        fileName = sessionId + ".zip"
+        zippedDir = await lib.convertToZip(sessionId)
+        res.set('Content-Type', 'application/octet-stream');
+        res.set('Content-Disposition', `attachment; filename=${fileName}`);
+        res.set('Content-Length', zippedDir.length);
+        res.send(zippedDir);
+    } catch (error) {
+        console.log(error)
+    }
+})
 module.exports = router
