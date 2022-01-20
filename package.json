@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ashirbad97/3dmope_webApp#readme",
   "dependencies": {
+    "adm-zip": "^0.5.9",
     "body-parser": "^1.19.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.17.2",
