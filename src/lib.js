@@ -6,6 +6,7 @@ const admz = require('adm-zip')
 const trialUploadFolder = path.join(__dirname, '../trialOutput')
 const tempUploadFolder = path.join(__dirname, '../tempUpload/')
 const sessionImgFolder = path.join(__dirname, '../imgOutput/')
+const dbFilePath = path.join(__dirname, '/db/3dmoper.db')
 seperator = "/"
 // Function definition
 createNewFolder = async (subjectId, newSessionCount) => {
@@ -102,7 +103,7 @@ pythonParser = async (subjectId, sessionId, trialId) => {
             stdio: 'pipe',
             encoding: 'utf-8'
         });
-        // console.log(watchParser.output)
+        console.log(watchParser.output)
     } catch (error) {
         console.log(error)
         return false
@@ -110,13 +111,14 @@ pythonParser = async (subjectId, sessionId, trialId) => {
 }
 callMoperCore = async (sessionId) => {
     moperCorePath = path.join(__dirname, "/utility/", "run_moperCore.sh")
-    mrcPath = mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
-    watchMoper = spawnSync('bash', ["-u", moperCorePath, mrcPath, sessionId], {
+    mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
+    watchMoper = spawnSync('bash', ["-u", moperCorePath, mrcPath, sessionId, dbFilePath, sessionImgFolder], {
         cwd: process.cwd(),
         env: process.env,
         stdio: 'pipe',
         encoding: 'utf-8'
     })
     console.log(watchMoper.output)
+    return watchMoper
 }
 module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip, checkIfTrialOutputFolderExist, pythonParser, callMoperCore }
