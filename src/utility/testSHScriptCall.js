@@ -9,7 +9,7 @@ function runScript(sessionId) {
     mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
     return spawn('bash', ["-u", moperCorePath, mrcPath, sessionId]);
 }
-const subprocess = runScript(51)
+const subprocess = runScript(21)
 // print output of script
 subprocess.stdout.on('data', (data) => {
     console.log(`data:${data}`);

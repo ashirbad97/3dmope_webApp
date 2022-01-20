@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require("fs")
+const { spawn, spawnSync } = require('child_process')
 const async = require('hbs/lib/async')
 const admz = require('adm-zip')
 const trialUploadFolder = path.join(__dirname, '../trialOutput')
@@ -52,6 +53,25 @@ checkIfSessionImgFolderExist = async (sessionId) => {
         return false
     }
 }
+checkIfTrialOutputFolderExist = async (subjectId, sessionId) => {
+    targetTrialOutputFolder = path.join(trialUploadFolder, seperator, subjectId.toString(), sessionId.toString())
+    // console.log(targetTrialOutputFolder)
+    if (fs.existsSync(targetTrialOutputFolder)) {
+        // console.log("Folder Exist")
+        // Find the list of all output img files
+        trialOutputFileList = fs.readdirSync(targetTrialOutputFolder)
+        // Check if folder is not empty
+        if (trialOutputFileList.length != 6) {
+            return "Not Found 6 Trial Files"
+        } else {
+            // console.log("Session Output Img Folder is empty")
+            return "FoundFiles"
+        }
+    } else {
+        // console.log("Folder does not exist")
+        return "Trial Folder does not exist"
+    }
+}
 convertToZip = async (sessionId) => {
     try {
         targetSessionFolder = path.join(sessionImgFolder, sessionId.toString())
@@ -72,4 +92,31 @@ convertToZip = async (sessionId) => {
         return false
     }
 }
-module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip }
+pythonParser = async (subjectId, sessionId, trialId) => {
+    try {
+        targetParserPath = path.join(__dirname, "/utility/", "trialFilesParser.py")
+        // console.log(targetParserPath)
+        watchParser = spawnSync('python3', ["-u", targetParserPath, "-sessionId", sessionId, "-userId", subjectId, "-subtrialId", trialId], {
+            cwd: process.cwd(),
+            env: process.env,
+            stdio: 'pipe',
+            encoding: 'utf-8'
+        });
+        // console.log(watchParser.output)
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+callMoperCore = async (sessionId) => {
+    moperCorePath = path.join(__dirname, "/utility/", "run_moperCore.sh")
+    mrcPath = mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
+    watchMoper = spawnSync('bash', ["-u", moperCorePath, mrcPath, sessionId], {
+        cwd: process.cwd(),
+        env: process.env,
+        stdio: 'pipe',
+        encoding: 'utf-8'
+    })
+    console.log(watchMoper.output)
+}
+module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip, checkIfTrialOutputFolderExist, pythonParser, callMoperCore }

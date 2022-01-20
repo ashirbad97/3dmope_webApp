@@ -129,7 +129,9 @@
                                                     class="badge badge-sm bg-gradient-danger">{{this.sessionStatus}}</span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-warning">Process</span>
+                                                <button class="btn btn-outline-success btn-sm mb-0"
+                                                    id="processTrialFiles"
+                                                    onclick="processTrialFiles('{{this.sessionId}}')">Process</button>
                                             </td>
                                             {{/if}}
 

@@ -1,5 +1,5 @@
 var createUser = (user) => {
-    console.log("Sending fetch request to the API endpoint")
+    // console.log("Sending fetch request to the API endpoint")
     return fetch('/api/createUser', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, cors, *same-origin
@@ -15,6 +15,22 @@ var createUser = (user) => {
     }).then(response => response);
 }
 
+var requestProcessTrialFiles = (targetTrial) => {
+    // console.log("Sending fetch request to process trial files")
+    return fetch('/parsePopulateProcess', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin', // include, *same-origin, omit
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify(targetTrial)
+        // body data type must match "Content-Type" header
+    }).then(response => response);
+}
 if (document.getElementById('adminHome') != null) {
     createUserModal = document.getElementById('')
     createUserButton = document.getElementById('onboardbutton')
@@ -51,6 +67,16 @@ if (document.getElementById('subjectSessionList') != null) {
     downloadOutputImgZipped = async (sessionId) => {
         console.log("Will find the images for session id ", sessionId)
         targetURL = "/downloadOutputImg?sessionId=" + sessionId
+        // For Session download open in new tab
         window.open(targetURL);
+    }
+    processTrialFiles = async (sessionId) => {
+        // Get the query seubjectID of the current window
+        targetTrial = {}
+        targetTrial.subjectId = (window.location.search).split("=")[1]
+        targetTrial.sessionId = sessionId
+        requestProcessTrialFiles(targetTrial).then((data) => {
+            console.log(data)
+        })
     }
 }

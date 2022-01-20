@@ -33,10 +33,20 @@ router.get('/subjectSessions?:uid', async (req, res) => {
     }
 })
 // Make Call to seed the db
-router.get('/parseAndPopulate?:sessionId', async (req, res) => {
+router.post('/parsePopulateProcess', async (req, res) => {
     try {
-        sessionId = req.query.sessionId
-        sessionOutputCount = await Sessions.findOutputImages(sessionId)
+        ifTrialOutputFolderExist = await lib.checkIfTrialOutputFolderExist(req.body.subjectId, req.body.sessionId)
+        console.log(ifTrialOutputFolderExist)
+        if (ifTrialOutputFolderExist == "FoundFiles") {
+            // If output images are found store them in db by calling each individual subtrialId
+            for (i = 1; i < 7; i++) {
+                // Possible Error since no error handling mechanism is present
+                await lib.pythonParser(req.body.subjectId, req.body.sessionId, i)
+            }
+            await lib.callMoperCore(req.body.sessionId)
+        } else {
+            return ifTrialOutputFolderExist
+        }
     } catch (error) {
         console.log(error)
     }
