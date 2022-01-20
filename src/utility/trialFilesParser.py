@@ -8,7 +8,7 @@ import argparse
 
 
 # Define the current file path
-currentPath = os.getcwd()
+currentPath = os.path.dirname(os.path.realpath(__file__))
 # Defning the DB Path
 dblocation = os.path.abspath(os.path.join(currentPath, "../db/3dmoper.db"))
 print("Database Location is : ", dblocation)
@@ -46,10 +46,7 @@ def storedb(sessionId, cordId, coordinates):
         print("Established connection with database")
         # Define the SQL Query for seeding of Path Coordinates
         # conn.execute("INSERT INTO coordinates (cordId,coordinates) VALUES (?,?)",(cordId,coordinates))
-        print("Inside db ")
-        print("Initial Coordinate value is ", coordinates.frameTime)
-        # print(json.dumps(coordinates.frameTime))
-        print("````````````````````````````````````````````````````````````")
+
         # Define the SQL Query for seeding of Result Coordinates
         conn.execute(
             "INSERT INTO subTrialData\
@@ -95,7 +92,7 @@ def storedb(sessionId, cordId, coordinates):
 
 # Function to compute the folder directory of trial .csv file
 def findFolder(sessionId, userId):
-    currentFolderPath = os.getcwd()
+    currentFolderPath = os.path.dirname(os.path.realpath(__file__))
     trialOutputFolder = "../../trialOutput/"
     trialOutputFolderPath = os.path.join(currentFolderPath, trialOutputFolder)
     targetFolder = os.path.join(trialOutputFolderPath, userId, str(sessionId))
