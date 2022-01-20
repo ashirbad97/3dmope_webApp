@@ -40,8 +40,17 @@ if (document.getElementById('adminHome') != null) {
             } else {
                 $('#onboardModalFailure').modal('toggle') //Failure Modal
             }
-        }).catch(async(error) => {
+        }).catch(async (error) => {
             $('#onboardModalFailure').modal('toggle') //Failure Modal
-            console.error(error)});
+            console.error(error)
+        });
     })
+}
+
+if (document.getElementById('subjectSessionList') != null) {
+    downloadOutputImgZipped = async (sessionId) => {
+        console.log("Will find the images for session id ", sessionId)
+        targetURL = "/downloadOutputImg?sessionId=" + sessionId
+        window.open(targetURL);
+    }
 }

@@ -37,7 +37,7 @@
     <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
+<body class="g-sidenav-show  bg-gray-200" id="subjectSessionList">
     <aside
         class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
         id="sidenav-main">
@@ -117,7 +117,11 @@
                                                     class="badge badge-sm bg-gradient-success">{{this.sessionStatus}}</span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
-                                                <span class="badge badge-sm bg-gradient-success">Output</span>
+                                                {{!-- <span class="badge badge-sm bg-gradient-success">Output</span>
+                                                --}}
+                                                <button class="btn btn-outline-success btn-sm mb-0"
+                                                    id="downloadOutputImgButton" sessionId={{this.sessionId}}
+                                                    onclick="downloadOutputImgZipped('{{this.sessionId}}')">Output</button>
                                             </td>
                                             {{else}}
                                             <td class="align-middle text-center text-sm">
