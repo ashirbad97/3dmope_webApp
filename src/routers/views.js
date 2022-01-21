@@ -43,12 +43,18 @@ router.post('/parsePopulateProcess', async (req, res) => {
                 // Possible Error since no error handling mechanism is present
                 await lib.pythonParser(req.body.subjectId, req.body.sessionId, i)
             }
-            await lib.callMoperCore(req.body.sessionId)
+            // Possible Error since no error handling mechanism is present, just checks if able to close or not
+            ifCallMoper = await lib.callMoperCore(req.body.sessionId)
+            console.log("IfCallMoper value is : " + ifCallMoper)
+            // Does not really work as error will never be null
+            if (ifCallMoper != null) {
+                res.status(200).send("Run Moper Code")
+            }
         } else {
-            return ifTrialOutputFolderExist
+            res.status(500).send("Error while processing")
         }
     } catch (error) {
-        console.log(error)
+        res.status(500).send("Error while processing")
     }
 })
 router.get('/downloadOutputImg?:sessionId', async (req, res) => {

@@ -110,15 +110,20 @@ pythonParser = async (subjectId, sessionId, trialId) => {
     }
 }
 callMoperCore = async (sessionId) => {
-    moperCorePath = path.join(__dirname, "/utility/", "run_moperCore.sh")
-    mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
-    watchMoper = spawnSync('bash', ["-u", moperCorePath, mrcPath, sessionId, dbFilePath, sessionImgFolder], {
-        cwd: process.cwd(),
-        env: process.env,
-        stdio: 'pipe',
-        encoding: 'utf-8'
-    })
-    console.log(watchMoper.output)
-    return watchMoper
+    try {
+        moperCorePath = path.join(__dirname, "/utility/", "run_moperCore.sh")
+        mrcPath = "/usr/local/MATLAB/MATLAB_Runtime/v99"
+        watchMoper = spawnSync('bash', ["-u", moperCorePath, mrcPath, sessionId, dbFilePath, sessionImgFolder], {
+            cwd: process.cwd(),
+            env: process.env,
+            stdio: 'pipe',
+            encoding: 'utf-8'
+        })
+        console.log(watchMoper.output)
+        return watchMoper
+    } catch (error) {
+        console.log(error)
+        return false
+    }
 }
 module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip, checkIfTrialOutputFolderExist, pythonParser, callMoperCore }

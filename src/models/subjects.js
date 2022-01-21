@@ -31,7 +31,7 @@ subjectSchema.virtual('sessions', {
 })
 // Schema Statics
 subjectSchema.statics.allSubjectList = async () => {
-    subjectList = await Subjects.find().select('subjectId')
+    subjectList = await Subjects.find().select('subjectId').populate("noOfsessions")
     return subjectList
 }
 
