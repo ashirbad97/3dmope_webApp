@@ -71,12 +71,20 @@ if (document.getElementById('subjectSessionList') != null) {
         window.open(targetURL);
     }
     processTrialFiles = async (sessionId) => {
-        // Get the query seubjectID of the current window
-        targetTrial = {}
-        targetTrial.subjectId = (window.location.search).split("=")[1]
-        targetTrial.sessionId = sessionId
-        requestProcessTrialFiles(targetTrial).then((data) => {
-            console.log(data)
-        })
+        try {
+            // Get the query subjectID of the current window
+            targetTrial = {}
+            targetTrial.subjectId = (window.location.search).split("=")[1]
+            targetTrial.sessionId = sessionId
+            requestProcessTrialFiles(targetTrial).then((data) => {
+                if (data.status == 200) {
+                    $('#processSuccess').modal('toggle') // Process Success Modal
+                } else if (data.status == 500) {
+                    $('#processFailure').modal('toggle') // Process Failure Modal
+                }
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
