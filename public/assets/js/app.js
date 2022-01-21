@@ -73,13 +73,17 @@ if (document.getElementById('subjectSessionList') != null) {
     processTrialFiles = async (sessionId) => {
         try {
             // Get the query subjectID of the current window
+            $('#notificationStartProcess').modal('toggle')
             targetTrial = {}
             targetTrial.subjectId = (window.location.search).split("=")[1]
             targetTrial.sessionId = sessionId
             requestProcessTrialFiles(targetTrial).then((data) => {
+                // console.log(data)
                 if (data.status == 200) {
+                    $('#notificationStartProcess').modal('toggle')
                     $('#processSuccess').modal('toggle') // Process Success Modal
                 } else if (data.status == 500) {
+                    $('#notificationStartProcess').modal('toggle')
                     $('#processFailure').modal('toggle') // Process Failure Modal
                 }
             })
