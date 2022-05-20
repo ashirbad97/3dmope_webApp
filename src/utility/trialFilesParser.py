@@ -1,6 +1,7 @@
 import asyncio
 import csv
-from importlib.metadata import requires
+
+# from importlib.metadata import requires
 import os
 import json
 import sqlite3
@@ -222,7 +223,7 @@ def main():
             + ".csv"
         )
         targetFilePath = os.path.abspath(os.path.join(targetFolder, targetFile))
-        print(f"File Name is ", targetFilePath)
+        print("File Name is " + targetFilePath)
         stimulus_coordinates = getCoordinates(targetFilePath)
         # dumpToFile(args.sessionId, subtrialId, stimulus_coordinates)
         dbOperation = storedb(args.sessionId, args.subtrialId, stimulus_coordinates)

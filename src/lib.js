@@ -103,7 +103,7 @@ pythonParser = async (subjectId, sessionId, trialId) => {
             stdio: 'pipe',
             encoding: 'utf-8'
         });
-        console.log(watchParser.output)
+        // console.log(watchParser.output)
     } catch (error) {
         console.log(error)
         return false
@@ -119,7 +119,7 @@ callMoperCore = async (sessionId) => {
             stdio: 'pipe',
             encoding: 'utf-8'
         })
-        console.log(watchMoper.output)
+        console.log(watchMoper)
         return watchMoper
     } catch (error) {
         console.log(error)

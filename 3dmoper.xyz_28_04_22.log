@@ -1,0 +1,713 @@
+Secure Server has started running on 3000
+Connected to DB
+Found User  happycat
+Total No of sessions in server are : 12
+Creating a new Session 
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Subject Not Found  ashirbad97
+Found User  goodcat
+Total No of sessions in server are : 13
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//14\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 12756,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//14\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  sleepycat
+Total No of sessions in server are : 14
+Creating a new Session 
+Found User  sleepycat
+Total No of sessions in server are : 15
+Creating a new Session 
+Found User  sleepycat
+Total No of sessions in server are : 16
+Creating a new Session 
+Found User  happycat
+Total No of sessions in server are : 17
+Creating a new Session 
+Found User  happycat
+Total No of sessions in server are : 18
+Creating a new Session 
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Found User  goodcat
+Total No of sessions in server are : 19
+Creating a new Session 
+Got upload request
+Not Found 6 Trial Files
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//20\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 14464,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//20\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  happycat
+Total No of sessions in server are : 20
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//21\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 15448,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//21\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  happycat
+Total No of sessions in server are : 21
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//22\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 16500,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//22\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  happycat
+Total No of sessions in server are : 22
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//23\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 17488,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//23\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  sleepycat
+Found User  sleepycat
+Found User  sleepycat
+Found User  sleepycat
+Found User  sleepycat
+Found User  sleepycat
+Total No of sessions in server are : 23
+Creating a new Session 
+Total No of sessions in server are : 23
+Creating a new Session 
+Total No of sessions in server are : 23
+Creating a new Session 
+Found User  sleepycat
+Found User  sleepycat
+Total No of sessions in server are : 23
+Creating a new Session 
+Total No of sessions in server are : 23
+Creating a new Session 
+Total No of sessions in server are : 24
+Creating a new Session 
+Total No of sessions in server are : 24
+Creating a new Session 
+Total No of sessions in server are : 24
+Creating a new Session 
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 25 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 25 }
+}
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 24 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 24 }
+}
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 24 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 24 }
+}
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 24 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 24 }
+}
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 25 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 25 }
+}
+MongoServerError: E11000 duplicate key error collection: 3dmoper.sessions index: sessionId_1 dup key: { sessionId: 24 }
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/operations/insert.js:51:33
+    at /home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection_pool.js:272:25
+    at handleOperationResult (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/sdam/server.js:370:9)
+    at MessageStream.messageHandler (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/connection.js:479:9)
+    at MessageStream.emit (events.js:203:13)
+    at processIncomingData (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:108:16)
+    at MessageStream._write (/home/baadalvm/3dmope_webApp/node_modules/mongodb/lib/cmap/message_stream.js:28:9)
+    at doWrite (_stream_writable.js:417:12)
+    at writeOrBuffer (_stream_writable.js:401:5)
+    at MessageStream.Writable.write (_stream_writable.js:301:11) {
+  index: 0,
+  code: 11000,
+  keyPattern: { sessionId: 1 },
+  keyValue: { sessionId: 24 }
+}
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Found User  sleepycat
+Total No of sessions in server are : 25
+Creating a new Session 
+Found User  sleepycat
+Total No of sessions in server are : 26
+Creating a new Session 
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Subject Not Found  
+Found User  sleepycat
+Total No of sessions in server are : 27
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//28\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 18460,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//28\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  badcat
+Total No of sessions in server are : 28
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//29\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 25109,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//29\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  badcat
+Total No of sessions in server are : 29
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//30\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 26203,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//30\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
+Found User  badcat
+Total No of sessions in server are : 30
+Creating a new Session 
+Got upload request
+Found User  badcat
+Total No of sessions in server are : 31
+Creating a new Session 
+Got upload request
+Subject Not Found  sadcat
+Subject Not Found  sadcat
+Found User  badcat
+Total No of sessions in server are : 32
+Creating a new Session 
+Got upload request
+Found User  badcat
+Total No of sessions in server are : 33
+Creating a new Session 
+Got upload request
+Found User  badcat
+Total No of sessions in server are : 34
+Creating a new Session 
+true
+Found User  baddog
+Total No of sessions in server are : 35
+Creating a new Session 
+Found User  baddog
+Total No of sessions in server are : 36
+Creating a new Session 
+Found User  badcat
+Total No of sessions in server are : 37
+Creating a new Session 
+Got upload request
+Found User  happycat
+Total No of sessions in server are : 38
+Creating a new Session 
+Got upload request
+FoundFiles
+{
+  status: 249,
+  signal: null,
+  output: [
+    null,
+    '------------------------------------------\n' +
+      'Setting up environment variables\n' +
+      '---\n' +
+      'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+      '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+      'The following trials were faulty:\n' +
+      '     1\n' +
+      '     2\n' +
+      '     3\n' +
+      '     4\n' +
+      '     5\n' +
+      '     6\n' +
+      '\n' +
+      'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+      '/home/baadalvm/3dmope_webApp/imgOutput//39\n',
+    "Unrecognized function or variable 'fig_2'.\n" +
+      '\n' +
+      'Error in moperCore (line 512)\n' +
+      '\n' +
+      'MATLAB:UndefinedFunction\n'
+  ],
+  pid: 27819,
+  stdout: '------------------------------------------\n' +
+    'Setting up environment variables\n' +
+    '---\n' +
+    'LD_LIBRARY_PATH is .:/usr/local/MATLAB/MATLAB_Runtime/v99/runtime/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/bin/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/os/glnxa64:/usr/local/MATLAB/MATLAB_Runtime/v99/sys/opengl/lib/glnxa64\n' +
+    '/home/baadalvm/3dmope_webApp/src/db/3dmoper.db\n' +
+    'The following trials were faulty:\n' +
+    '     1\n' +
+    '     2\n' +
+    '     3\n' +
+    '     4\n' +
+    '     5\n' +
+    '     6\n' +
+    '\n' +
+    'Sorry! No trials are good enough to create a cross-correlogram.\n' +
+    '/home/baadalvm/3dmope_webApp/imgOutput//39\n',
+  stderr: "Unrecognized function or variable 'fig_2'.\n" +
+    '\n' +
+    'Error in moperCore (line 512)\n' +
+    '\n' +
+    'MATLAB:UndefinedFunction\n'
+}
+IfCallMoper value is : [object Object]
