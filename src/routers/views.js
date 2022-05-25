@@ -11,7 +11,7 @@ const req = require('express/lib/request')
 
 // End of functions and start of routers
 // GET Homepage
-router.get('/', async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
         allSubjects = await Subjects.allSubjectList()
         res.render('adminHome', { allSubjects })
@@ -70,4 +70,13 @@ router.get('/downloadOutputImg?:sessionId', async (req, res) => {
         console.log(error)
     }
 })
+// Show to main (entry) page
+// router.get('/', async (req, res) => {
+//     try {
+//         allSubjects = await Subjects.allSubjectList()
+//         res.render('adminHome', { allSubjects })
+//     } catch (error) {
+//         console.log(error)
+//     }
+// })
 module.exports = router
