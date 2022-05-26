@@ -71,12 +71,12 @@ router.get('/downloadOutputImg?:sessionId', async (req, res) => {
     }
 })
 // Show to main (entry) page
-// router.get('/', async (req, res) => {
-//     try {
-//         allSubjects = await Subjects.allSubjectList()
-//         res.render('adminHome', { allSubjects })
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
+router.get('/', async (req, res) => {
+    try {
+        allSubjects = await Subjects.allSubjectList()
+        res.render('mainPage', { allSubjects })
+    } catch (error) {
+        console.log(error)
+    }
+})
 module.exports = router
