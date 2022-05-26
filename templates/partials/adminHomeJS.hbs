@@ -18,3 +18,25 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+{{!-- Fade In effect of Hero Image in main --}}
+<script type="text/javascript">
+    var opacity = 0;
+    var intervalID = 0;
+    window.onload = fadeIn;
+
+    function fadeIn() {
+        setInterval(show, 200);
+    }
+
+    function show() {
+        var body = document.getElementById("main");
+        opacity = Number(window.getComputedStyle(body)
+            .getPropertyValue("opacity"));
+        if (opacity < 1) {
+            opacity = opacity + 0.1;
+            body.style.opacity = opacity
+        } else {
+            clearInterval(intervalID);
+        }
+    }
+</script>
