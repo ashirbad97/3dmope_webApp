@@ -54,6 +54,7 @@ checkIfSessionImgFolderExist = async (sessionId) => {
         return false
     }
 }
+// Lib function to check if the raw .csv folder exist or not
 checkIfTrialOutputFolderExist = async (subjectId, sessionId) => {
     targetTrialOutputFolder = path.join(trialUploadFolder, seperator, subjectId.toString(), sessionId.toString())
     // console.log(targetTrialOutputFolder)
@@ -73,15 +74,44 @@ checkIfTrialOutputFolderExist = async (subjectId, sessionId) => {
         return "Trial Folder does not exist"
     }
 }
-convertToZip = async (sessionId) => {
+// Lib function to fetch the raw .csv files
+getRawCsvFiles = async (subjectId, sessionId) => {
     try {
-        targetSessionFolder = path.join(sessionImgFolder, sessionId.toString())
-        // console.log(targetSessionFolder)
+        ifTrialOutputFolderExist = await checkIfTrialOutputFolderExist(subjectId, sessionId)
+        if (ifTrialOutputFolderExist == "FoundFiles") {
+            // N.B: Since in /trialOuput sessionID's are contained inside the subjectID we will have to concatenate them
+            trialFolder = subjectId + "/" + sessionId
+            // As called function determines all 6 files exist can assume all trials are present
+            // Send output folder to be zipped with parent folder parameter
+            zippedRawCsvFiles = await convertToZip("trialUploadFolder", trialFolder)
+            if (!zippedRawCsvFiles) throw new Error("raw .csv files could not be zipped")
+            return zippedRawCsvFiles
+        } else {
+            console.log("Error: ", ifTrialOutputFolderExist)
+            return false
+        }
+    } catch (error) {
+        console.log(error)
+        return false
+    }
+}
+// Lib function to go through a set of files in a folder validate them and convert into a zipped file
+convertToZip = async (parentFolder, sessionId) => {
+    try {
+        // Really bad way of checking conditions which one is the parent folder
+        if (parentFolder == "sessionImgFolder") {
+            parentFolder = sessionImgFolder
+        } else if (parentFolder == "trialUploadFolder") {
+            parentFolder = trialUploadFolder
+        } else {
+            throw new Error('Parent Folder Invalid')
+        }
+        // Joining the parent folder with the sessions folder
+        targetSessionFolder = path.join(parentFolder, sessionId.toString())
         if (fs.existsSync(targetSessionFolder)) {
             sessionOutputFileList = fs.readdirSync(targetSessionFolder)
             zp = new admz()
             sessionOutputFileList.forEach(file => {
-                // console.log(path.join(targetSessionFolder, "/", file))
                 zp.addLocalFile(path.join(targetSessionFolder, "/", file))
             });
             const zippedData = zp.toBuffer()
@@ -126,4 +156,8 @@ callMoperCore = async (sessionId) => {
         return false
     }
 }
-module.exports = { createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist, convertToZip, checkIfTrialOutputFolderExist, pythonParser, callMoperCore }
+module.exports = {
+    createNewFolder, handlerUploadFiles, checkIfSessionImgFolderExist,
+    convertToZip, checkIfTrialOutputFolderExist, pythonParser,
+    callMoperCore, getRawCsvFiles
+}

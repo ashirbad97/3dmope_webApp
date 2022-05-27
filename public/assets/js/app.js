@@ -14,10 +14,26 @@ var createUser = (user) => {
         // body data type must match "Content-Type" header
     }).then(response => response);
 }
-
+// Fetch for processing csv files
 var requestProcessTrialFiles = (targetTrial) => {
     // console.log("Sending fetch request to process trial files")
     return fetch('/parsePopulateProcess', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        credentials: 'same-origin', // include, *same-origin, omit
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify(targetTrial)
+        // body data type must match "Content-Type" header
+    }).then(response => response);
+}
+// Fetch for downloading raw csv files
+var fetchRawCsvFiles = (targetTrial) => {
+    return fetch('/downloadRawCsv', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, cors, *same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -64,17 +80,21 @@ if (document.getElementById('adminHome') != null) {
 }
 
 if (document.getElementById('subjectSessionList') != null) {
+    // Download the output graph results
     downloadOutputImgZipped = async (sessionId) => {
-        console.log("Will find the images for session id ", sessionId)
+        // console.log("Will find the images for session id ", sessionId)
         targetURL = "/downloadOutputImg?sessionId=" + sessionId
         // For Session download open in new tab
         window.open(targetURL);
     }
+    // Process the raw .csv files
     processTrialFiles = async (sessionId) => {
         try {
             // Get the query subjectID of the current window
             $('#notificationStartProcess').modal('toggle')
+            // Payload Object containing sessionId and subjectId
             targetTrial = {}
+            // Extracting subjectId from the URL
             targetTrial.subjectId = (window.location.search).split("=")[1]
             targetTrial.sessionId = sessionId
             requestProcessTrialFiles(targetTrial).then((data) => {
@@ -91,4 +111,20 @@ if (document.getElementById('subjectSessionList') != null) {
             console.log(error)
         }
     }
+    // Download raw .csv files
+    downloadRawCsv = async (sessionId) => {
+        try {
+            // Payload Object containing sessionId and subjectId
+            targetTrial = {}
+            // Extracting subjectId from the URL
+            targetTrial.subjectId = (window.location.search).split("=")[1]
+            targetTrial.sessionId = sessionId
+            targetURL = "/downloadRawCsv?sessionId=" + targetTrial.sessionId + "&subjectId=" + targetTrial.subjectId
+            // For Session download open in new tab
+            window.open(targetURL);
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
+

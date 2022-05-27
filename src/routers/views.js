@@ -36,7 +36,7 @@ router.get('/subjectSessions?:uid', async (req, res) => {
 router.post('/parsePopulateProcess', async (req, res) => {
     try {
         ifTrialOutputFolderExist = await lib.checkIfTrialOutputFolderExist(req.body.subjectId, req.body.sessionId)
-        console.log(ifTrialOutputFolderExist)
+        // console.log(ifTrialOutputFolderExist)
         if (ifTrialOutputFolderExist == "FoundFiles") {
             // If output images are found store them in db by calling each individual subtrialId
             for (i = 1; i < 7; i++) {
@@ -57,17 +57,33 @@ router.post('/parsePopulateProcess', async (req, res) => {
         res.status(500).send("Error while processing")
     }
 })
+// Downloading the ouput graph files
 router.get('/downloadOutputImg?:sessionId', async (req, res) => {
     try {
         sessionId = req.query.sessionId
         fileName = sessionId + ".zip"
-        zippedDir = await lib.convertToZip(sessionId)
+        // Specify the parent directory of the session Id folders
+        zippedDir = await lib.convertToZip("sessionImgFolder", sessionId)
         res.set('Content-Type', 'application/octet-stream');
         res.set('Content-Disposition', `attachment; filename=${fileName}`);
         res.set('Content-Length', zippedDir.length);
         res.send(zippedDir);
     } catch (error) {
         console.log(error)
+    }
+})
+// Downloading the raw .csv files
+router.get('/downloadRawCsv', async (req, res) => {
+    try {
+        fileName = req.query.sessionId + "_csvFile" + ".zip"
+        rawCsvZippedFile = await lib.getRawCsvFiles(req.query.subjectId, req.query.sessionId)
+        res.set('Content-Type', 'application/octet-stream');
+        res.set('Content-Disposition', `attachment; filename=${fileName}`);
+        res.set('Content-Length', rawCsvZippedFile.length);
+        res.status(200).send(rawCsvZippedFile)
+    } catch (error) {
+        console.log(error)
+        res.status(500).send(error)
     }
 })
 // Show to main (entry) page

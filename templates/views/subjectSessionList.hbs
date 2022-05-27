@@ -46,8 +46,7 @@
         <div class="sidenav-header">
             <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
                 aria-hidden="true" id="iconSidenav"></i>
-            <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-                target="_blank">
+            <a class="navbar-brand m-0" href="" target="_blank">
                 <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
                 <span class="ms-1 font-weight-bold text-white">Individual Session List</span>
             </a>
@@ -90,9 +89,7 @@
                                             <th
                                                 class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                 Status</th>
-                                            <th
-                                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Action</th>
+                                            <th></th>
                                             <th class="text-secondary opacity-7"></th>
                                         </tr>
                                     </thead>
@@ -113,23 +110,31 @@
                                             <td>
                                                 <p class="text-xs font-weight-bold mb-0">{{this.timestamp}}</p>
                                             </td>
+                                            {{!-- Condition if input files are computed --}}
                                             {{#if this.sessionStatus}}
                                             <td class="align-middle text-center text-sm">
                                                 <span
                                                     class="badge badge-sm bg-gradient-success">{{this.sessionStatus}}</span>
                                             </td>
+                                            {{!-- Download Output Graph Button --}}
                                             <td class="align-middle text-center text-sm">
-                                                {{!-- <span class="badge badge-sm bg-gradient-success">Output</span>
-                                                --}}
                                                 <button class="btn btn-outline-success btn-sm mb-0"
                                                     id="downloadOutputImgButton" sessionId={{this.sessionId}}
                                                     onclick="downloadOutputImgZipped('{{this.sessionId}}')">Output</button>
                                             </td>
+                                            {{!-- Download raw .csv files --}}
+                                            <td class="align-middle text-center text-sm">
+                                                <button class="btn btn-outline-success btn-sm mb-0"
+                                                    id="downloadRawCsvButton" sessionId={{this.sessionId}}
+                                                    onclick="downloadRawCsv('{{this.sessionId}}')">.csv</button>
+                                            </td>
+                                            {{!-- Condition if input files are not computed --}}
                                             {{else}}
                                             <td class="align-middle text-center text-sm">
                                                 <span
                                                     class="badge badge-sm bg-gradient-danger">{{this.sessionStatus}}</span>
                                             </td>
+                                            {{!-- Process raw .csv files --}}
                                             <td class="align-middle text-center text-sm">
                                                 <button class="btn btn-outline-success btn-sm mb-0"
                                                     id="processTrialFiles"
