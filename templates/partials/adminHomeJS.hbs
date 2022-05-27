@@ -19,24 +19,27 @@
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
 {{!-- Fade In effect of Hero Image in main --}}
+{{!-- Will run only for the main page --}}
 <script type="text/javascript">
-    var opacity = 0;
-    var intervalID = 0;
-    window.onload = fadeIn;
+    if (document.getElementById('adminHome') != null) {
+        var opacity = 0;
+        var intervalID = 0;
+        window.onload = fadeIn;
 
-    function fadeIn() {
-        setInterval(show, 200);
-    }
+        function fadeIn() {
+            setInterval(show, 200);
+        }
 
-    function show() {
-        var body = document.getElementById("main");
-        opacity = Number(window.getComputedStyle(body)
-            .getPropertyValue("opacity"));
-        if (opacity < 1) {
-            opacity = opacity + 0.1;
-            body.style.opacity = opacity
-        } else {
-            clearInterval(intervalID);
+        function show() {
+            var body = document.getElementById("main");
+            opacity = Number(window.getComputedStyle(body)
+                .getPropertyValue("opacity"));
+            if (opacity < 1) {
+                opacity = opacity + 0.1;
+                body.style.opacity = opacity
+            } else {
+                clearInterval(intervalID);
+            }
         }
     }
 </script>
